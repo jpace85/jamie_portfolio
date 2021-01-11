@@ -1,60 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jamie Pace Portfolio Site</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-            integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamie Pace Portfolio Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+</head>
 
-    <body>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/jamiepace.png" alt="">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction-->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">Hi, it's me <strong>Jamie Pace</strong></h1>
+        <p class="section__subtitle section__subtitle--intro">up and coming front-end developer</p>
+        <img src="img/dev-jamie-01.jpg" alt="a picture of Jamie Pace">
+    </section>
+
+    <!--My Services-->
+    <section class="my-services" id="services">
+        <h2 class="section__title section__title--services">What I do</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Design + Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit animi atque amet excepturi quis
+                    praesentium tenetur? Iure voluptate cumque velit. Asperiores quod sit laudantium non porro amet,
+                    dolore laboriosam? Voluptatem?</p>
+            </div> <!-- / service-->
+            <div class="service">
+                <h3>E-Commerce</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum minus necessitatibus reprehenderit
+                    consequuntur et nulla numquam! Eum voluptatibus minus nam, aspernatur non maiores praesentium quod
+                    expedita quo sequi pariatur neque.</p>
+            </div> <!-- / service-->
+            <div class="service">
+                <h3>Wordpress</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolore enim aperiam repellat nemo?
+                    Nemo fugit quam adipisci, tenetur maiores perspiciatis nesciunt odit expedita! Animi, praesentium
+                    repellat. Molestias, quidem eveniet.</p>
+            </div> <!-- / service-->
+        </div>
+
+        <a href="#work" class="btn">My Work</a>
+    </section>
+
+    <!--About me-->
+    <section class="about-me" id="about">
         <header>
-            <div class="logo">
-                <img src="img/jamiepace.png" alt="">
-            </div>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">About Me</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">My Work</a></li>
-                </ul>
-            </nav>
+            <h2 class="section__title section__title--about">Who I am</h2>
+            <p class="section__subtitle section__subtitle--about"></p>
         </header>
-
-        <!-- Introduction-->
-        <section class="intro" id="home">
-            <h1 class="section__title section__title--intro">Hi, it's me <strong>Jamie Pace</strong></h1>
-            <p class="section__subtitle section__subtitle--intro">up and coming front-end developer</p>
-            <img src="img/dev-jamie-01.jpg" alt="a picture of Jamie Pace">
-        </section>
-
-        <!--My Services-->
-        <section class="my-services" id="services">
-            <h2 class="section__title section__title--services">What I do</h2>
-            <div class="services">
-                <div class="service">
-                    <h3></h3>
-                    <p></p>
-                </div> <!-- / service-->
-                <div class="service">
-                    <h3></h3>
-                    <p></p>
-                </div> <!-- / service-->
-                <div class="service">
-                    <h3></h3>
-                    <p></p>
-                </div> <!-- / service-->
+            <div class="about-me__body">
+                <p></p>
+                <p></p>
             </div>
+            <img src="img/dev-jamie-02.jpg" alt="Jamie sitting in a field">
+    </section>
 
-            <a href="#work" class="btn">My Work</a>
-        </section>
-    </body>
+    <!-- My Work-->
+    <section class="my-work" id="work">
+        <h2 class="section__title">My Work</h2>
+        <p class="section__subtitle"></p>
+
+        <div class="portfolio">
+            <!--Portfolio item 01-->
+            <a href="#" class="portfolio__item">
+                <img src="portfolio-01.jpg" alt="" class="portfolio__img">
+            </a>
+
+            <!--Portfolio item 02-->
+            <a href="#" class="portfolio__item">
+                <img src="portfolio-02.jpg" alt="" class="portfolio__img">
+            </a>
+
+            <!--Portfolio item 03-->
+            <a href="#" class="portfolio__item">
+                <img src="portfolio-03.jpg" alt="" class="portfolio__img">
+            </a>
+
+            <!--Portfolio item 04-->
+            <a href="#" class="portfolio__item">
+                <img src="portfolio-04.jpg" alt="" class="portfolio__img">
+            </a>
+
+            <!--Portfolio item 05-->
+            <a href="#" class="portfolio__item">
+                <img src="portfolio-05.jpg" alt="" class="portfolio__img">
+            </a>
+
+            <!--Portfolio item 06-->
+            <a href="#" class="portfolio__item">
+                <img src="portfolio-06.jpg" alt="" class="portfolio__img">
+            </a>
+
+            <!--Portfolio item 07-->
+            <a href="#" class="portfolio__item">
+                <img src="portfolio-07.jpg" alt="" class="portfolio__img">
+            </a>
+
+            <!--Portfolio item 08-->
+            <a href="#" class="portfolio__item">
+                <img src="portfolio-08.jpg" alt="" class="portfolio__img">
+            </a>
+            
+            <!--Portfolio item 09-->
+            <a href="#" class="portfolio__item">
+                <img src="portfolio-09.jpg" alt="" class="portfolio__img">
+            </a>
+
+            <!--Portfolio item 10-->
+            <a href="#" class="portfolio__item">
+                <img src="portfolio-10.jpg" alt="" class="portfolio__img">
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer>
+        <a href="mailto:drate_j@hotmail.com" class="footer-link">drate_j@hotmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item"><a class="social-list__link" href="https://facebook.com">a</a></ul></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://linkedin.com">b</a></ul></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://github.com">c</a></ul></li>
+        </ul>
+    </footer>
+
+</body>
 
 </html>
