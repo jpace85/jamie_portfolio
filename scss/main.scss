@@ -1,7 +1,37 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+@import './resets';
+@import './variables';
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name);
+}
+
+//TO BE IMPLEMENTED SOMEWHERE ON WEBSITE
+
+//Example 1
+@mixin flexCenter($direction) {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+//Example 2
+@mixin theme($lght-theme: true) {
+    @if $light-theme {
+        background: lighten($clr-dark, 100%);
+        color: darken($clr-light, 100%);
+    }
+}
+
+// .light {
+//     @include theme($light-theme: true);
+// }
+
+//Example 3
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
 }
 
 /* Custom Properties, update these for your own design */
@@ -9,14 +39,7 @@
 :root {
     --ff-primary: 'Source Sans Pro', sans-serif;
     --ff-secondary: 'Source Code Pro', monospace;
-    
-    --fw-reg: 300;
-    --fw-bold: 900;
-    
-    --clr-light: #fff;
-    --clr-dark: #303030;
-    --clr-accent: #16e0bd;
-    
+       
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
@@ -42,8 +65,8 @@ html {
 }
 
 body {
-    background: var(--clr-light);
-    color: var(--clr-dark);
+    background: $clr-light;
+    color: $clr-dark;
     margin: 0;
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
@@ -59,10 +82,10 @@ img {
     max-width: 100%;
 }
 
-strong { font-weight: var(--fw-bold) }
+strong { font-weight: weight(bold) }
 
 :focus {
-    outline: 3px solid var(--clr-accent);
+    outline: 3px solid $clr-accent;
     outline-offset: 3px;
 }
 
@@ -71,14 +94,14 @@ strong { font-weight: var(--fw-bold) }
 .btn {
     display: inline-block;
     padding: .5em 2.5em;
-    background: var(--clr-accent);
-    color: var(--clr-dark);
+    background: $clr-accent;
+    color: $clr-dark;
     text-decoration: none;
     cursor: pointer;
     font-size: .8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: var(--fw-bold);
+    font-weight: weight(bold);
     transition: transform 200ms ease-in-out;
 }
 
@@ -103,8 +126,12 @@ h3 { font-size: var(--fs-h3) }
 .section__title {
     margin-bottom: .25em;
 
+    @include media(">smlPhone", "<tablet") {
+        color:blue;
+    }
+
     &--intro {
-        font-weight: var(--fw-reg);
+        font-weight: weight(regular);
 
         strong {
             display:block;
@@ -119,15 +146,15 @@ h3 { font-size: var(--fs-h3) }
 
 .section__subtitle--intro,
 .section__subtitle--about {
-    background: var(--clr-accent);
+    background: $clr-accent;
     padding: .25em 1em;
     font-family: var(--ff-secondary);
     margin-bottom: 1em;
 }
 
 .section__subtitle--work {
-    color: var(--clr-accent);
-    font-weight: var(--fw-bold);
+    color: $clr-accent;
+    font-weight: weight(bold);
     margin-bottom: 2em;
 }
 
@@ -146,8 +173,8 @@ header {
 
 .nav {
     position: fixed;
-    background: var(--clr-dark);
-    color: var(--clr-light);
+    background: $clr-dark;
+    color: $clr-light;
     top: 0;
     bottom: 0;
     left: 0;
@@ -172,13 +199,13 @@ header {
 
 .nav__link {
     color: inherit;
-    font-weight: var(--fw-bold);
+    font-weight: weight(bold);
     font-size: var(--fs-h2);
     text-decoration: none;
 }
 
 .nav__link:hover {
-    color: var(--clr-accent);
+    color: $clr-accent;
 }
 
 .nav-toggle {
@@ -220,7 +247,7 @@ header {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-    background: var(--clr-accent);
+    background: $clr-accent;
     width: 2em;
     height: 3px;
     border-radius: 1em;
@@ -287,16 +314,16 @@ header {
 /*My services section */
 
 .my-services {
-    background-color: var(--clr-dark);
+    background-color: $clr-dark;
     background-image: url(../img/services-bg.jpg);
     background-size:cover;
     background-blend-mode:multiply;
-    color: var(--clr-light);
+    color: $clr-light;
     text-align: center;
 }
 
 .section__title--services {
-    color: var(--clr-accent);
+    color: $clr-accent;
     position: relative;
 }
 
@@ -306,7 +333,7 @@ header {
     width:2em;
     height:1px;
     margin:0.5em auto 1em;
-    background: var(--clr-light);
+    background: $clr-light;
     opacity: 0.25;
 }
 
@@ -512,8 +539,8 @@ header {
 /* My Work */
 
 .my-work {
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
+    background-color: $clr-dark;
+    color: $clr-light;
     text-align: center;
 }
 
@@ -525,7 +552,7 @@ header {
 }
 
 .portfolio__item {
-    background: var(--clr-accent);
+    background: $clr-accent;
     overflow: hidden;
 }
 
@@ -550,7 +577,7 @@ header {
 
 .footer {
     background: #111;
-    color: var(--clr-accent);
+    color: $clr-accent;
     text-align: center;
     padding: 2.5em 0;
     font-size: var(--fs-h3);
@@ -563,7 +590,7 @@ header {
 }
 
 .footer__link {
-    font-weight: var(--fw-bold);
+    font-weight: weight(bold);
 }
 
 .footer__link:hover,

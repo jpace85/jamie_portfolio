@@ -1,0 +1,19 @@
+//COLORS
+$clr-light: #fff;
+$clr-dark: #303030;
+$clr-accent: #16e0bd;
+
+//TYPOGRAPHY
+$font-weights: (
+    "regular": 300,
+    "bold": 900
+);
+
+//SCREEN SIZES
+$breakpoints: (smlPhone: 320px,
+               lrgPhone: 425px,
+               tablet: 768px,
+               laptop: 992px,
+               desktop: 1200px) !default;
+
+$mobile: 425px;
