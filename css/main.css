@@ -107,7 +107,7 @@ h3 {
 
 @media (max-width: 425px) {
   .section__title {
-    color: red;
+    color: blue;
   }
 }
 

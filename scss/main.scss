@@ -126,8 +126,8 @@ h3 { font-size: var(--fs-h3) }
 .section__title {
     margin-bottom: .25em;
 
-    @include media(">smlPhone", "<tablet") {
-        color:blue;
+    @include respond-to('small-phone') {
+        color: blue;
     }
 
     &--intro {
