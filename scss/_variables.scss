@@ -3,7 +3,32 @@ $clr-light: #fff;
 $clr-dark: #303030;
 $clr-accent: #16e0bd;
 
+$bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+0.125em 0.125em 0.25em rgba(0,0,0,.15);
+
 //TYPOGRAPHY
+
+/*Font Names*/
+$ff-primary: 'Source Sans Pro', sans-serif;
+$ff-secondary: 'Source Code Pro', monospace;
+
+/*Heading Sizes*/
+$fs-h1: 3rem;
+$fs-h2: 2.25rem;
+$fs-h3: 1.25rem;
+$fs-body: 1rem;
+
+/*Heading Sizes for Tablets and larger*/
+@media (min-width: 768px) {
+    :root {
+        $fs-h1: 4.5rem;
+        $fs-h2: 3.75rem;
+        $fs-h3: 1.5rem;
+        $fs-body: 1.125rem;
+    }
+}
+
+/*Font Weights*/
 $font-weights: (
     "regular": 300,
     "bold": 900
