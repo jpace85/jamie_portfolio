@@ -9,117 +9,6 @@
 /*Heading Sizes*/
 /*Heading Sizes for Tablets and larger*/
 /*Font Weights*/
-/* General styles */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: #fff;
-  color: #303030;
-  margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-section {
-  padding: 5em 2em;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-strong {
-  font-weight: 900;
-}
-
-:focus {
-  outline: 3px solid #16e0bd;
-  outline-offset: 3px;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: .5em 2.5em;
-  background: #16e0bd;
-  color: #303030;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: .8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 900;
-  -webkit-transition: -webkit-transform 200ms ease-in-out;
-  transition: -webkit-transform 200ms ease-in-out;
-  transition: transform 200ms ease-in-out;
-  transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
-}
-
-.btn:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-/* Typography */
-h1,
-h2,
-h3 {
-  line-height: 1;
-  margin: 0;
-}
-
-h1 {
-  font-size: 3rem;
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 4.5em;
-  }
-}
-
-h2 {
-  font-size: 2.25rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-}
-
-.section__title {
-  margin-bottom: .25em;
-}
-
-.section__title--intro {
-  font-weight: 300;
-}
-
-.section__title--intro strong {
-  display: block;
-}
-
-.section__subtitle {
-  margin: 0;
-  font-size: 1.25rem;
-}
-
-.section__subtitle--intro, .section__subtitle--about {
-  background: #16e0bd;
-  padding: .25em 1em;
-  font-family: "Source Code Pro", monospace;
-  margin-bottom: 1em;
-}
-
-.section__subtitle--work {
-  color: #16e0bd;
-  font-weight: 900;
-  margin-bottom: 2em;
-}
-
 /* header */
 header {
   display: -webkit-box;
@@ -131,13 +20,35 @@ header {
   padding: 1em;
 }
 
-.logo {
-  max-width: 100px;
+@media (min-width: 768px) {
+  .logo {
+    display: none;
+  }
+}
+
+.logo, .logo-white {
+  cursor: pointer;
+  max-width: 50px;
+}
+
+.logo-white {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .logo-white {
+    position: fixed;
+    display: inline-block;
+    z-index: 1001;
+    max-width: 50px;
+    top: .25em;
+    left: 1em;
+  }
 }
 
 .nav {
   position: fixed;
-  background: #303030;
+  background: #1A2238;
   color: #fff;
   top: 0;
   bottom: 0;
@@ -150,6 +61,15 @@ header {
   transition: -webkit-transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
   transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
   transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1), -webkit-transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+  /* For Tablet + sizes */
+}
+
+@media (min-width: 768px) {
+  .nav {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    bottom: auto;
+  }
 }
 
 .nav__list {
@@ -170,6 +90,17 @@ header {
           align-items: center;
   margin: 0;
   padding: 0;
+  /* For Tablet + sizes */
+}
+
+@media (min-width: 768px) {
+  .nav__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 10px;
+  }
 }
 
 .nav__link {
@@ -180,7 +111,13 @@ header {
 }
 
 .nav__link:hover {
-  color: #16e0bd;
+  color: #F4DB7D;
+}
+
+@media (min-width: 768px) {
+  .nav__item a {
+    font-size: 1.25rem;
+  }
 }
 
 .nav-toggle {
@@ -192,6 +129,13 @@ header {
   right: 1em;
   top: 1em;
   z-index: 1000;
+  /*Hide when screen is tablet + size */
+}
+
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
 }
 
 .nav-open .nav {
@@ -225,7 +169,7 @@ header {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-  background: #16e0bd;
+  background: #F4DB7D;
   width: 2em;
   height: 3px;
   border-radius: 1em;
@@ -249,6 +193,135 @@ header {
 
 .hamburger::after {
   bottom: 6px;
+}
+
+/* General styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  color: #1A2238;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+section {
+  padding: 5em 2em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+strong {
+  font-weight: 900;
+}
+
+:focus {
+  outline: 3px solid #F4DB7D;
+  outline-offset: 3px;
+}
+
+/* Buttons */
+.btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.btn-wrapper .btn {
+  display: inline-block;
+  padding: .5em 2.5em;
+  background: #F4DB7D;
+  color: #1A2238;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+  -webkit-transition: -webkit-transform 200ms ease-in-out;
+  transition: -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+}
+
+.btn-wrapper .btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.btn-wrapper .btn, .btn-wrapper + .btn {
+  margin: 5px 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  line-height: 1;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4.5em;
+  }
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+.section__title {
+  margin-bottom: .25em;
+}
+
+.section__title--intro {
+  font-weight: 300;
+}
+
+.section__title--intro strong {
+  display: block;
+}
+
+.section__subtitle {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.section__subtitle--intro, .section__subtitle--about {
+  background: #F4DB7D;
+  padding: .25em 1em;
+  font-family: "Work Sans", monospace;
+  margin-bottom: 1em;
+}
+
+.section__subtitle--work {
+  color: #F4DB7D;
+  font-weight: 900;
+  margin-bottom: 2em;
 }
 
 /*  Intro section  */
@@ -304,7 +377,7 @@ header {
 
 /*My services section */
 .my-services {
-  background-color: #303030;
+  background-color: #1A2238;
   background-image: url(../img/services-bg.jpg);
   background-size: cover;
   background-blend-mode: multiply;
@@ -313,7 +386,7 @@ header {
 }
 
 .section__title--services {
-  color: #16e0bd;
+  color: #F4DB7D;
   position: relative;
 }
 
@@ -550,7 +623,7 @@ header {
 
 /* My Work */
 .my-work {
-  background-color: #303030;
+  background-color: #1A2238;
   color: #fff;
   text-align: center;
 }
@@ -565,7 +638,7 @@ header {
 }
 
 .portfolio__item {
-  background: #16e0bd;
+  background: #F4DB7D;
   overflow: hidden;
 }
 
@@ -591,7 +664,7 @@ header {
 /* Footer */
 .footer {
   background: #111;
-  color: #16e0bd;
+  color: #F4DB7D;
   text-align: center;
   padding: 2.5em 0;
   font-size: 1.25rem;
